@@ -1,6 +1,8 @@
+version: '3.8'
+
 services:
   app_crecer:
-    build: pycrecer
+    build: .
     mem_limit: 512m
     ports:
       - "8080:8080"
@@ -10,8 +12,7 @@ services:
       DB_PASSWORD: 1234
     restart: always
     depends_on:
-      dbcrecer:
-        condition: service_healthy
+      - dbcrecer
 
   dbcrecer:
     image: mysql:8.0
