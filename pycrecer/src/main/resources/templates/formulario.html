@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/fragmentos :: head">
+
+</head>
+
+
+
+<body class="container py-4 ">
+<!-- NAVBAR no centrado -->
+<nav class="mb-4" th:replace="common/fragmentos :: navbar"></nav>
+
+<!-- CONTENIDO centrado -->
+<div class="d-flex flex-column align-items-center" >
+    <h1 class="mb-4 text-center">Búsqueda de Asistente por DNI</h1>
+
+    <!-- Formulario con fondo púrpura degradado -->
+    <form th:action="@{/asistentes/buscar}" method="post"
+          class="p-4 rounded text-white mb-3 w-100"
+          style="max-width: 500px; background: linear-gradient(135deg, #7d3c98, #cc58d6);">
+        <div class="mb-3">
+            <label for="dni" class="form-label">Ingrese DNI:</label>
+            <input type="text" id="dni" name="dni" class="form-control" th:value="${dni}" />
+        </div >
+        <div class="d-grid">
+            <button type="submit" class="btn btn-light">Buscar</button>
+        </div>
+    </form>
+
+    <!-- Mensaje de error -->
+    <p class="text-danger text-center" th:if="${error}" th:text="${error}"></p>
+
+    <!-- Resultado en tarjeta -->
+    <div class="card text-success w-100" style="max-width: 500px;" th:if="${asistente}">
+        <div class="card-header text-center">
+            <h2 class="mb-0">Resultado</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Nombre:</strong> <span th:text="${asistente.nombre}"></span></p>
+            <p><strong>Apellido:</strong> <span th:text="${asistente.apellido}"></span></p>
+            <p><strong>DNI:</strong> <span th:text="${asistente.dni}"></span></p>
+            <p><strong>Fecha:</strong> <span th:text="${asistente.fecha}"></span></p>
+        </div>
+    </div>
+</div>
+</body>
