@@ -1,0 +1,10 @@
+com\todocode\pycrecer\controller\AsistenteController.class
+com\todocode\pycrecer\exceptions\AsistenteExistenteException.class
+com\todocode\pycrecer\exceptions\ManejadorA.class
+com\todocode\pycrecer\config\SecurityConfig.class
+com\todocode\pycrecer\services\AsistenteService.class
+com\todocode\pycrecer\PycrecerApplication.class
+com\todocode\pycrecer\entities\Asistente.class
+com\todocode\pycrecer\repositories\AsistenteRepository.class
+com\todocode\pycrecer\config\TestAuthController.class
+com\todocode\pycrecer\exceptions\AsistenteNoEncontradoException.class
