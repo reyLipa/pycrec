@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  app_crecer:
+  pycrecer:
     build: .
     mem_limit: 512m
     ports:
