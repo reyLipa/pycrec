@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   pycrecer:
-    build: .
+    build:
+      context: ./pycrecer
+      dockerfile: Dockerfile
     mem_limit: 512m
     ports:
       - "8080:8080"
